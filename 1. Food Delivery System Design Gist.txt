@@ -1,0 +1,42 @@
+
+* Micro Service Archi
+  Distributed System (for Fault Tolerance)
+  Load Balancing (for Fault Tolerance & taking correct optimal decision in real time)
+  Decoupling ( for seperation of concerns over responsibilities )
+  Logging & Metrics
+  Extensible
+
+-> Decouple & Scale (Extensible)
+
+
+------
+
+* Load Balancing :
+  ----
+  - Consistent Hashing
+     \
+     While scaling overall change should be minimum
+
+* Consistent Hashing :
+  ---
+  -> Clockwise assign to nearest server
+   
+  -> Idea : Load should increased & decreased uniformly (as much as possible)  
+  -> Consistent Hashing Gives you flexibility & Load balancing in a very efficient way
+
+  - Skew Distributions   // 1 server will get lots of loads (Skewed Load)
+    Virtual Servers
+
+* Message Queue
+  
+  - Async Helps you to achieve freedomness 
+  - Persistence in Data (DB)
+
+  HeartBeat (Notifier)
+  - Checks if server is alive or dead
+
+=> Principle of Load Balancing suggests to not have duplicacy in distribution alongwith the balancing of nodes
+
+=> Through Load Balancing & HeartBeat mechanism we can notify the failed order to working servers
+
+  So this is all abt Message/Task which do activity with the help of Load Balancing & HeartBeat to assign the unfinished task to appropriate server
